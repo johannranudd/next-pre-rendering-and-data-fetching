@@ -10,6 +10,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <h1>hello</h1>
+      <h1>hello remote</h1>
     </div>
   );
 }
