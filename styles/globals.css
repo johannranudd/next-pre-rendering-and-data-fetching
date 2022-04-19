@@ -25,6 +25,11 @@ img {
   width: 100%;
 }
 
+h1,
+h2 {
+  text-align: center;
+}
+
 .section-center {
   width: 95%;
   max-width: 1200px;
