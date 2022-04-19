@@ -1,19 +1,28 @@
 import { createContext, useContext } from 'react';
-import { useState } from 'react';
+import { useState, useReducer, useEffect } from 'react';
+import { initialState, reducer } from './reducer';
+import { getData } from '../utils/utils';
+// import cookieCutter from 'cookie-cutter';
+// import Cookies from 'cookies';
+
+const url2 = `https://www.johann.one/wp-json/wc/v3/products?consumer_key=ck_665f152a7ef7923e561fd71862902f11f72672c9&consumer_secret=cs_bce68a8f771bf9355c3c48d304d3e50e530e2ae0`;
 
 const AppContext = createContext();
 
 export function AppWrapper({ children }) {
-  const [state, setState] = useState(null);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  const handleClick = () => {
-    console.log('hello from context');
+  //   useEffect(async () => {
+
+  //   }, []);
+
+  const handleClick = async () => {
+    const data = await getData(url2);
+    dispatch({ type: 'INITIAL', payload: data });
   };
 
-  const test = 12;
-
   return (
-    <AppContext.Provider value={{ handleClick, test }}>
+    <AppContext.Provider value={{ handleClick }}>
       {children}
     </AppContext.Provider>
   );

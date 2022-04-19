@@ -9,6 +9,7 @@ const url2 = `https://www.johann.one/wp-json/wc/v3/products?consumer_key=ck_665f
 
 export default function Home(props) {
   const { loadedData } = props;
+
   // console.log(loadedData);
   return (
     <StyledDiv>

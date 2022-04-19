@@ -18,7 +18,6 @@ const ProductDetailPage = (props) => {
         <img src={image.src} alt={image.alt} />
         <p>{name}</p>
         <p>{categories[0].slug}</p>
-        <p>{categories[0].slug}</p>
         <Button onClick={handleClick}>Add to Cart</Button>
       </section>
     </div>

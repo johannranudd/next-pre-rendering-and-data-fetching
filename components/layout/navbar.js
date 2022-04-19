@@ -7,10 +7,15 @@ const Navbar = () => {
     <StyledNav>
       <section className='section-center'>
         <div>
-          <Link href={`/`}>Next Events</Link>
+          <Link href={`/`}>Home</Link>
         </div>
         <div>
-          <Link href={`/`}>Browse All Events</Link>
+          <Link href={`/`}>
+            <p>
+              <span>0</span>
+              Cart
+            </p>
+          </Link>
         </div>
       </section>
     </StyledNav>
