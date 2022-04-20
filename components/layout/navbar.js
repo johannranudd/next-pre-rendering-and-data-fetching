@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { StyledNav } from '../../styles/navnar.styles/navbar.styles';
 import { useAppContext } from '../../context/context';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 
 const Navbar = () => {
   const { state } = useAppContext();
@@ -9,14 +10,16 @@ const Navbar = () => {
     <StyledNav>
       <section className='section-center'>
         <div>
-          <Link href={`/`}>Home</Link>
+          <Link href={`/`}>
+            <h2>Logo</h2>
+          </Link>
         </div>
         <div>
           <Link href={`/cart`}>
-            <p>
+            <button>
               <span>{state.amount}</span>
-              Cart
-            </p>
+              <AiOutlineShoppingCart />
+            </button>
           </Link>
         </div>
       </section>

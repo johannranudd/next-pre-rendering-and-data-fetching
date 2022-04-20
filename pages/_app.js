@@ -1,4 +1,3 @@
-import '../styles/globals.css';
 import Layout from '../components/layout/layout';
 import { AppWrapper } from '../context/context';
 
