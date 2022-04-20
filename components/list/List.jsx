@@ -16,14 +16,15 @@ const List = ({ loadedData }) => {
   }, [displayByCategory]);
 
   console.log(arrayToLoop);
-
-  return (
-    <StyledUl>
-      {loadedData.map((item) => {
-        return <ListItem key={item.id} {...item} />;
-      })}
-    </StyledUl>
-  );
+  if (arrayToLoop) {
+    return (
+      <StyledUl>
+        {arrayToLoop.map((item) => {
+          return <ListItem key={item.id} {...item} />;
+        })}
+      </StyledUl>
+    );
+  }
 };
 
 const StyledUl = styled.ul`
