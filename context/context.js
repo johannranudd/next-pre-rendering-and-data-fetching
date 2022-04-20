@@ -52,8 +52,6 @@ export function AppWrapper({ children }) {
     setDisplayByCategory(filteredCart);
   };
 
-  //   console.log(displayByCategory);
-
   return (
     <AppContext.Provider
       value={{
