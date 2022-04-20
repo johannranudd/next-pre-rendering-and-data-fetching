@@ -17,29 +17,28 @@ const List = ({ loadedData }) => {
 
   if (arrayToLoop) {
     return (
-      <StyledUl>
+      <ul className='product-list'>
         {arrayToLoop.map((item) => {
           return <ListItem key={item.id} {...item} />;
         })}
-      </StyledUl>
+      </ul>
     );
   }
 };
 
-const StyledUl = styled.ul`
-  display: grid;
+// const StyledUl = styled.ul`
+//   display: grid;
+//   margin: 4rem 0;
+//   li {
+//     margin: auto;
+//     max-width: 300px;
+//     img {
+//     }
+//   }
 
-  margin: 4rem 0;
-  li {
-    margin: auto;
-    max-width: 300px;
-    img {
-    }
-  }
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-`;
+//   @media (min-width: 768px) {
+//     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+//   }
+// `;
 
 export default List;

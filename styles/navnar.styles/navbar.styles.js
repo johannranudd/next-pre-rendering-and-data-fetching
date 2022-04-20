@@ -8,6 +8,7 @@ export const StyledNav = styled.nav`
     padding: 2rem 0;
     div {
       h2 {
+        cursor: pointer;
       }
       button {
         display: flex;

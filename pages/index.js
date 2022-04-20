@@ -18,7 +18,7 @@ export default function Home(props) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <section className='section-center'>
-        <h1>header</h1>
+        <h1>The Coffee Mug Store</h1>
         <CategoryButtons {...props} />
         <List {...props} />
       </section>
