@@ -5,13 +5,11 @@ import List from '../components/list/List';
 import { getData } from '../utils/utils';
 import CategoryButtons from '../components/ui/CategoryButtons';
 
-// const url = `https://console.firebase.google.com/u/0/project/next-test-60d0d/database/next-test-60d0d-default-rtdb/data/~2F`;
 const url2 = `https://www.johann.one/wp-json/wc/v3/products?consumer_key=ck_665f152a7ef7923e561fd71862902f11f72672c9&consumer_secret=cs_bce68a8f771bf9355c3c48d304d3e50e530e2ae0`;
 
 export default function Home(props) {
-  const { loadedData } = props;
+  // const { loadedData } = props;
 
-  // console.log(loadedData);
   return (
     <StyledDiv>
       <Head>
@@ -30,7 +28,6 @@ export default function Home(props) {
 
 export async function getStaticProps(context) {
   const data = await getData(url2);
-  console.log('server says hello');
 
   if (!data) {
     return {
@@ -43,7 +40,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       loadedData: data,
-      revalidate: 5,
+      revalidate: 10,
       notFound: false,
     },
   };

@@ -31,15 +31,11 @@ export async function getStaticProps(context) {
   const data = await getData(url2);
 
   const product = data.find((product) => product.id === Number(productId));
-  // console.log('PRODUCT:', product);
-  //   console.log('data:', data);
-  // console.log('parameters', params);
-  // console.log('parID', productId);
 
   return {
     props: {
       loadedData: product,
-      revalidate: 5,
+      revalidate: 10,
       notFound: false,
     },
   };
@@ -47,15 +43,9 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths(context) {
   const data = await getData(url2);
-  // const itemId = data.map((item) => {
-  //   return item.id;
-  // });
   const paths = data.map((item) => {
     return { params: { productid: item.id.toString() } };
-    // return { params: { ids: { productid: item.id.toString() } } };
   });
-
-  // console.log(paths);
 
   return {
     paths,

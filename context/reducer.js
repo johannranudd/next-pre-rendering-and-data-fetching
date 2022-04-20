@@ -41,7 +41,6 @@ export const reducer = (state, action) => {
       }
 
     case 'INCREMENT':
-      //   console.log(action.payload);
       const newCart = state.cart.map((item) => {
         if (item.id === action.payload) {
           return { ...item, amountInCart: item.amountInCart + 1 };
@@ -108,6 +107,14 @@ export const reducer = (state, action) => {
       );
       total = parseFloat(total.toFixed(2));
       return { ...state, total, amount };
+
+    case 'CLEAR_CART':
+      localStorage.clear();
+      console.log(state.cart);
+      return {
+        ...state,
+        cart: [],
+      };
 
     default:
       return state;

@@ -1,14 +1,33 @@
 import React from 'react';
 import { useAppContext } from '../../context/context';
 import Button from '../../components/ui/Button';
+import { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Cart = () => {
-  const { state, handleIncrement, handleDecrement, removeItemFromCart } =
-    useAppContext();
+  const {
+    state,
+    handleIncrement,
+    handleDecrement,
+    removeItemFromCart,
+    clearCart,
+  } = useAppContext();
   const { cart, total, amount } = state;
+
+  const [ccInputValue, setccInputValue] = useState();
+  const router = useRouter();
+
   const itemsInCart = cart.filter((item) => {
     return item.amountInCart > 0;
   });
+
+  const handleSubmit = (e) => {
+    // e.preventDefault();
+    clearCart();
+    // console.log('hanldesubmit');
+    router.push('../success/');
+  };
 
   return (
     <div>
@@ -33,6 +52,9 @@ const Cart = () => {
             );
           })}
         </ul>
+
+        {/* totals */}
+
         <div className='totals'>
           <p>
             items in cart <strong>{amount}</strong>
@@ -41,6 +63,19 @@ const Cart = () => {
             Total price <strong>{total}</strong>
           </p>
         </div>
+
+        {/* form */}
+
+        <form onSubmit={handleSubmit}>
+          <label>Input Fake Creditcard:</label>
+          <input
+            name={ccInputValue}
+            type='text'
+            value={ccInputValue ?? ''}
+            onChange={(e) => setccInputValue(e.target.value)}
+          />
+          <Button type='submit'>submit</Button>
+        </form>
       </section>
     </div>
   );

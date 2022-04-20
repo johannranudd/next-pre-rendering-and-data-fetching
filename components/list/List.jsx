@@ -8,14 +8,13 @@ const List = ({ loadedData }) => {
   const [arrayToLoop, setArrayToLoop] = useState();
 
   useEffect(() => {
-    if (displayByCategory === undefined) {
+    if (!displayByCategory) {
       setArrayToLoop(loadedData);
     } else {
       setArrayToLoop(displayByCategory);
     }
   }, [displayByCategory]);
 
-  console.log(arrayToLoop);
   if (arrayToLoop) {
     return (
       <StyledUl>
@@ -33,8 +32,6 @@ const StyledUl = styled.ul`
   margin: 4rem 0;
   li {
     margin: auto;
-    /* display: grid; */
-    /* place-items: center; */
     max-width: 300px;
     img {
     }

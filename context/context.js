@@ -20,7 +20,6 @@ export function AppWrapper({ children }) {
 
   useEffect(() => {
     myFunction();
-    // console.log(state);
     state.cart = localStorage.getItem('cart')
       ? JSON.parse(localStorage.getItem('cart'))
       : [];
@@ -52,15 +51,21 @@ export function AppWrapper({ children }) {
     setDisplayByCategory(filteredCart);
   };
 
+  const clearCart = () => {
+    dispatch({ type: 'CLEAR_CART' });
+    console.log('func');
+  };
+
   return (
     <AppContext.Provider
       value={{
+        state,
         handleIncrement,
         handleDecrement,
         removeItemFromCart,
         handleSortByCategory,
         displayByCategory,
-        state,
+        clearCart,
       }}
     >
       {children}
