@@ -22,7 +22,6 @@ export const reducer = (state, action) => {
       });
       localStorage.setItem('cart', JSON.stringify(action.payload));
 
-      //   console.log('initial');
       if (state.total > 0) {
         return {
           ...state,
@@ -40,6 +39,7 @@ export const reducer = (state, action) => {
           cart: action.payload,
         };
       }
+
     case 'INCREMENT':
       //   console.log(action.payload);
       const newCart = state.cart.map((item) => {
@@ -108,6 +108,7 @@ export const reducer = (state, action) => {
       );
       total = parseFloat(total.toFixed(2));
       return { ...state, total, amount };
+
     default:
       return state;
   }

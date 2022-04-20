@@ -8,6 +8,7 @@ const AppContext = createContext();
 
 export function AppWrapper({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [displayByCategory, setDisplayByCategory] = useState();
 
   const myFunction = async () => {
     // run asynchronous tasks here
@@ -40,10 +41,29 @@ export function AppWrapper({ children }) {
     dispatch({ type: 'REMOVE_FROM_CART', payload: id });
     dispatch({ type: 'GET_TOTALS' });
   };
+  const handleSortByCategory = (category) => {
+    const filteredCart = state.cart.filter((item) => {
+      if (category === 'all') {
+        return item;
+      } else {
+        return item.categories[0].slug === category;
+      }
+    });
+    setDisplayByCategory(filteredCart);
+  };
+
+  //   console.log(displayByCategory);
 
   return (
     <AppContext.Provider
-      value={{ handleIncrement, handleDecrement, removeItemFromCart, state }}
+      value={{
+        handleIncrement,
+        handleDecrement,
+        removeItemFromCart,
+        handleSortByCategory,
+        displayByCategory,
+        state,
+      }}
     >
       {children}
     </AppContext.Provider>

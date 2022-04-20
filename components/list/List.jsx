@@ -1,7 +1,22 @@
 import ListItem from './ListItem';
 import styled from 'styled-components';
+import { useState, useEffect } from 'react';
+import { useAppContext } from '../../context/context';
 
 const List = ({ loadedData }) => {
+  const { displayByCategory } = useAppContext();
+  const [arrayToLoop, setArrayToLoop] = useState();
+
+  useEffect(() => {
+    if (displayByCategory === undefined) {
+      setArrayToLoop(loadedData);
+    } else {
+      setArrayToLoop(displayByCategory);
+    }
+  }, [displayByCategory]);
+
+  console.log(arrayToLoop);
+
   return (
     <StyledUl>
       {loadedData.map((item) => {
