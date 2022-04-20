@@ -9,7 +9,12 @@ const ListItem = ({ id, name, images, price }) => {
   return (
     <li>
       <Link href={`/ids/${id}`}>
-        <img src={image.src} alt={image.alt} />
+        <a className='image-link'>
+          <img src={image.src} alt={image.alt} />
+          <div className='backdrop'>
+            <p>View image</p>
+          </div>
+        </a>
       </Link>
       <p>{name}</p>
       <p>{price}</p>
