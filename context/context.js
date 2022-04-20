@@ -2,9 +2,6 @@ import { createContext, useContext } from 'react';
 import { useState, useReducer, useEffect } from 'react';
 import { initialState, reducer } from './reducer';
 import { getData } from '../utils/utils';
-// import cookieCutter from 'cookie-cutter';
-// import Cookies from 'cookies';
-
 const url2 = `https://www.johann.one/wp-json/wc/v3/products?consumer_key=ck_665f152a7ef7923e561fd71862902f11f72672c9&consumer_secret=cs_bce68a8f771bf9355c3c48d304d3e50e530e2ae0`;
 
 const AppContext = createContext();
@@ -12,17 +9,42 @@ const AppContext = createContext();
 export function AppWrapper({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  //   useEffect(async () => {
-
-  //   }, []);
-
-  const handleClick = async () => {
+  const myFunction = async () => {
+    // run asynchronous tasks here
     const data = await getData(url2);
-    dispatch({ type: 'INITIAL', payload: data });
+    if (state.cart.length === 0) {
+      dispatch({ type: 'INITIAL', payload: data });
+    }
+  };
+
+  useEffect(() => {
+    myFunction();
+    // console.log(state);
+    state.cart = localStorage.getItem('cart')
+      ? JSON.parse(localStorage.getItem('cart'))
+      : [];
+    localStorage.setItem('cart', JSON.stringify(state.cart));
+  }, [state]);
+
+  useEffect(() => {
+    dispatch({ type: 'GET_TOTALS' });
+  }, [state.total]);
+
+  const handleIncrement = (id) => {
+    dispatch({ type: 'INCREMENT', payload: id });
+  };
+  const handleDecrement = (id) => {
+    dispatch({ type: 'DECREMENT', payload: id });
+  };
+  const removeItemFromCart = (id) => {
+    dispatch({ type: 'REMOVE_FROM_CART', payload: id });
+    dispatch({ type: 'GET_TOTALS' });
   };
 
   return (
-    <AppContext.Provider value={{ handleClick }}>
+    <AppContext.Provider
+      value={{ handleIncrement, handleDecrement, removeItemFromCart, state }}
+    >
       {children}
     </AppContext.Provider>
   );

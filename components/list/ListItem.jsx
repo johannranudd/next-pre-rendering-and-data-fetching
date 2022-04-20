@@ -5,7 +5,7 @@ import { useAppContext } from '../../context/context';
 
 const ListItem = ({ id, name, images, price }) => {
   const image = images[0];
-  const { handleClick } = useAppContext();
+  const { handleIncrement } = useAppContext();
   return (
     <li>
       <Link href={`/ids/${id}`}>
@@ -13,7 +13,9 @@ const ListItem = ({ id, name, images, price }) => {
       </Link>
       <p>{name}</p>
       <p>{price}</p>
-      <Button onClick={handleClick}>Add to Cart</Button>
+      <Button data-id={id} onClick={() => handleIncrement(id)}>
+        Add to Cart
+      </Button>
     </li>
   );
 };
