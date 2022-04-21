@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Button from '../ui/Button';
 import { useAppContext } from '../../context/context';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 
 const ListItem = ({ id, name, images, price }) => {
   const image = images[0];
@@ -19,7 +20,10 @@ const ListItem = ({ id, name, images, price }) => {
       <p>{name}</p>
       <p>{price}</p>
       <Button data-id={id} onClick={() => handleIncrement(id)}>
-        Add to Cart
+        <div>
+          <p>Add to Cart</p>
+          <AiOutlineShoppingCart />
+        </div>
       </Button>
     </li>
   );

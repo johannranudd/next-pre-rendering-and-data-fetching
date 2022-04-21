@@ -81,8 +81,12 @@ body {
 a {
   /* color: inherit; */
   text-decoration: none;
+  cursor: pointer;
 }
 
+button {
+    cursor: pointer;
+}
 
 ul {
   list-style-type: none;
@@ -108,6 +112,8 @@ h2 {
   flex-direction: column;
   align-items: center;
 }
+
+
 
 `;
 

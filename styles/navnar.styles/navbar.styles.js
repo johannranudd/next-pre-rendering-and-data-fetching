@@ -16,6 +16,7 @@ export const StyledNav = styled.nav`
         background: transparent;
         border: none;
         font-size: 1.5rem;
+
         span {
           position: relative;
           top: -5px;
@@ -33,3 +34,4 @@ export const StyledNav = styled.nav`
     }
   }
 `;
+// cart - btn;

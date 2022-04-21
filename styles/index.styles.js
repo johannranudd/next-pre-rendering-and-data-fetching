@@ -37,6 +37,36 @@ export const StyledDiv = styled.div`
           }
         }
       }
+      button {
+        border: none;
+        a {
+          position: relative;
+          display: inline-block;
+          overflow: hidden;
+          height: 30px;
+          div {
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            background: transparent;
+            width: 100%;
+            padding: 0.2rem 2rem 0.3rem;
+            transform: translateY(-27px);
+            :hover {
+              transform: translateY(0);
+            }
+            p {
+              margin-top: 10px;
+            }
+            svg {
+              font-size: 1.2rem;
+            }
+          }
+          border: 2px solid black;
+          /* padding: 0.2rem 2rem 0.3rem; */
+        }
+      }
     }
   }
   .category-list {
@@ -51,7 +81,6 @@ export const StyledDiv = styled.div`
       background: transparent;
       border: 1px solid black;
       padding: 0.25rem 0.5rem;
-      cursor: pointer;
     }
   }
 `;
