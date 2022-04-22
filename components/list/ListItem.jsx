@@ -30,7 +30,7 @@ const ListItem = ({ id, name, images, price }) => {
         onClick={() => handleIncrement(id)}
       >
         <div>
-          <p>Add to Cart</p>
+          <p>Add to cart</p>
           <AiOutlineShoppingCart />
         </div>
       </Button>

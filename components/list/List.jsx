@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { useAppContext } from '../../context/context';
 import { colors } from '../../styles/app.styles';
+import { fonts } from '../../styles/app.styles';
 
 const List = ({ loadedData }) => {
   const { displayByCategory } = useAppContext();
@@ -32,6 +33,7 @@ const StyledUl = styled.ul`
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 3rem;
   margin-bottom: 3rem;
+  /* font-family: ${fonts.nunito}; */
   li {
     margin: auto;
     .image-link {
@@ -72,10 +74,11 @@ const StyledUl = styled.ul`
         overflow: hidden;
         height: 30px;
         width: 100%;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         border: 2px solid ${colors.clrOrange};
         transition: 0.2s;
         transform: scale(1);
+        box-shadow: ${colors.boxShadowBtns};
+
         :active {
           transform: scale(0.9);
         }
@@ -86,7 +89,7 @@ const StyledUl = styled.ul`
           align-items: center;
           background: transparent;
           width: 100%;
-          transform: translateY(-37px);
+          transform: translateY(-40px);
           :hover {
             transform: translateY(0px);
           }

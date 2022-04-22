@@ -19,12 +19,15 @@ export const colors = {
   backgroundColorGradient: 'linear-gradient(45deg, #fa709a 20%, #fee140 100%);',
   clrLightBlueGradiant: 'linear-gradient(135deg, #fef2e5 0%, #e2d1c3 100%)',
   clrOrange: '#c26610;',
+  boxShadowBtns: 'rgba(50, 50, 93, 0.25) 0px 6px 12px -2px',
 };
 
 export const fonts = {
   lato: "'Lato', sans-serif;",
   playfair: "'Playfair Display', serif;",
-  josefin: "'Josefin Sans', sans-serif",
+  josefin: "'Josefin Sans', sans-serif;",
+  nunito: "'Nunito', sans-serif;",
+  poppins: "'Poppins', sans-serif;",
 };
 
 export const size = {
@@ -63,7 +66,7 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-        font-family: ${fonts.lato};
+        font-family: ${fonts.poppins};
     }
     
     
@@ -76,9 +79,9 @@ export const GlobalStyle = createGlobalStyle`
 html,
 body {
   min-height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    background:  ${colors.clrLightBlueGradiant}
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+    background:  ${colors.clrLightBlueGradiant};
 }
 
 a {
@@ -87,19 +90,13 @@ a {
   cursor: pointer;
 }
 
-button {
-    cursor: pointer;
-    border: none;
-    background: transparent;
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
-}
-
 
 
 
 
 ul {
   list-style-type: none;
+  
 }
 
 img {
@@ -107,8 +104,10 @@ img {
 }
 
 h1,
-h2 {
+h2, 
+h3 {
   text-align: center;
+  font-family: ${fonts.nunito};
 }
 
 .section-center {
@@ -122,6 +121,8 @@ h2 {
   flex-direction: column;
   align-items: center;
 }
+
+
 
 
 

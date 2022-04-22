@@ -1,4 +1,5 @@
 import Head from 'next/head';
+
 import Image from 'next/image';
 import { StyledDiv } from '../styles/index.styles';
 import List from '../components/list/List';

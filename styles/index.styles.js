@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from './app.styles';
+import { colors, fonts } from './app.styles';
 
 export const StyledDiv = styled.div`
   h1 {

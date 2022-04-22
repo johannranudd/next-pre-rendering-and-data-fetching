@@ -1,9 +1,3 @@
-// import cookieCutter from 'cookie-cutter';
-// import Cookie from 'cookie';
-// import Cookies from 'cookies';
-// import Cookies from 'cookies';
-// import { setCookies } from 'cookies-next';
-
 export const initialState = {
   data: null,
   cart: [],

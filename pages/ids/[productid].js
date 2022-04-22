@@ -2,6 +2,7 @@ import { getData } from '../../utils/utils';
 import Button from '../../components/ui/Button';
 import { useAppContext } from '../../context/context';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { StyledDiv } from '../../styles/ids/productid.styles';
 
 const url2 = `https://www.johann.one/wp-json/wc/v3/products?consumer_key=ck_665f152a7ef7923e561fd71862902f11f72672c9&consumer_secret=cs_bce68a8f771bf9355c3c48d304d3e50e530e2ae0`;
 //   const url = `https://www.johann.one/wp-json/wc/v3/products/${paramId}?consumer_key=ck_665f152a7ef7923e561fd71862902f11f72672c9&consumer_secret=cs_bce68a8f771bf9355c3c48d304d3e50e530e2ae0`;
@@ -14,11 +15,13 @@ const ProductDetailPage = (props) => {
   const image = images[0];
 
   return (
-    <div>
+    <StyledDiv>
       <section className='section-center'>
         <img src={image.src} alt={image.alt} />
-        <p>{name}</p>
-        <p>{categories[0].slug}</p>
+        <h2>{name}</h2>
+        <div className='product-info'>
+          <p>{categories[0].slug}</p>
+        </div>
         <Button className='add-to-cart-btn' onClick={() => handleIncrement(id)}>
           <div>
             <p>Add to Cart</p>
@@ -26,7 +29,7 @@ const ProductDetailPage = (props) => {
           </div>
         </Button>
       </section>
-    </div>
+    </StyledDiv>
   );
 };
 

@@ -11,15 +11,12 @@ export const StyledNav = styled.nav`
         cursor: pointer;
       }
       button {
-        display: flex;
-        /* align-items: center; */
-        background: transparent;
-        border: none;
+        /* display: flex; */
         font-size: 1.5rem;
 
         span {
           position: relative;
-          top: -5px;
+          top: -13px;
           left: 10px;
           min-height: 18px;
           min-width: 18px;
