@@ -17,6 +17,8 @@ export const colors = {
   deleteBtnColor: '#ff4040',
   editBtnColor: '#73b973',
   backgroundColorGradient: 'linear-gradient(45deg, #fa709a 20%, #fee140 100%);',
+  clrLightBlueGradiant: 'linear-gradient(135deg, #fef2e5 0%, #e2d1c3 100%)',
+  clrOrange: '#c26610;',
 };
 
 export const fonts = {
@@ -76,6 +78,7 @@ body {
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background:  ${colors.clrLightBlueGradiant}
 }
 
 a {
@@ -86,7 +89,14 @@ a {
 
 button {
     cursor: pointer;
+    border: none;
+    background: transparent;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 }
+
+
+
+
 
 ul {
   list-style-type: none;

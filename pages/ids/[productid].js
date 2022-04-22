@@ -1,6 +1,7 @@
 import { getData } from '../../utils/utils';
 import Button from '../../components/ui/Button';
 import { useAppContext } from '../../context/context';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 
 const url2 = `https://www.johann.one/wp-json/wc/v3/products?consumer_key=ck_665f152a7ef7923e561fd71862902f11f72672c9&consumer_secret=cs_bce68a8f771bf9355c3c48d304d3e50e530e2ae0`;
 //   const url = `https://www.johann.one/wp-json/wc/v3/products/${paramId}?consumer_key=ck_665f152a7ef7923e561fd71862902f11f72672c9&consumer_secret=cs_bce68a8f771bf9355c3c48d304d3e50e530e2ae0`;
@@ -18,7 +19,12 @@ const ProductDetailPage = (props) => {
         <img src={image.src} alt={image.alt} />
         <p>{name}</p>
         <p>{categories[0].slug}</p>
-        <Button onClick={() => handleIncrement(id)}>Add to Cart</Button>
+        <Button className='add-to-cart-btn' onClick={() => handleIncrement(id)}>
+          <div>
+            <p>Add to Cart</p>
+            <AiOutlineShoppingCart />
+          </div>
+        </Button>
       </section>
     </div>
   );
