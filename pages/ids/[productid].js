@@ -11,16 +11,53 @@ const ProductDetailPage = (props) => {
   const { handleIncrement } = useAppContext();
 
   const { loadedData } = props;
-  const { id, name, images, categories, price } = loadedData;
+  const { id, name, images, dimensions, weight, categories, price } =
+    loadedData;
   const image = images[0];
+
+  const radiusNum = Number(dimensions.width / 2);
+  const heightNum = Number(dimensions.height);
+  const volumeCalc = Math.PI * radiusNum * radiusNum * heightNum;
+  const volume = parseFloat(volumeCalc.toFixed());
+  const dl = volume / 100;
 
   return (
     <StyledDiv>
       <section className='section-center'>
         <img src={image.src} alt={image.alt} />
-        <h2>{name}</h2>
-        <div className='product-info'>
-          <p>{categories[0].slug}</p>
+        <h3>Product info</h3>
+        <div class='name-and-price'>
+          <h4>
+            <strong>${name}</strong>
+          </h4>
+          <h4 class='price'>
+            <strong>kr ${price}</strong>
+          </h4>
+        </div>
+
+        <div class='object-info'>
+          <div class='dimensions'>
+            <p>
+              Length: <strong>{dimensions.length}cm</strong>
+            </p>
+            <p>
+              Width: <strong>{dimensions.width}cm</strong>
+            </p>
+            <p>
+              Height: <strong>{dimensions.height}cm</strong>
+            </p>
+          </div>
+          <div class='other'>
+            <p>
+              Weight: <strong>{weight} kg</strong>
+            </p>
+            <p>
+              Material: <strong>{categories[0].name}</strong>
+            </p>
+            <p>
+              Volume: <strong>{dl} dl</strong>
+            </p>
+          </div>
         </div>
         <Button className='add-to-cart-btn' onClick={() => handleIncrement(id)}>
           <div>

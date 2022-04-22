@@ -7,18 +7,46 @@ export const StyledDiv = styled.div`
   section {
     max-width: 500px;
     img {
-      /* max-width: 500px; */
       margin-bottom: 1rem;
     }
-    h2 {
+    h3 {
+      padding-bottom: 1rem;
       margin-bottom: 1rem;
     }
-    .product-info {
-      p {
+
+    .name-and-price {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.153);
+      margin-bottom: 1rem;
+      .price {
+        color: ${colors.clrOrange};
       }
     }
+
+    .object-info {
+      display: flex;
+      justify-content: space-between;
+      .dimensions {
+        p {
+          display: flex;
+          justify-content: space-between;
+          width: 100px;
+        }
+      }
+      .other {
+        p {
+          display: flex;
+          justify-content: space-between;
+          width: 140px;
+        }
+      }
+    }
+
+    /* button */
     button {
       display: flex;
+      width: 100%;
       a {
         position: relative;
         display: inline-block;
@@ -45,7 +73,6 @@ export const StyledDiv = styled.div`
             transform: translateY(0px);
           }
           p {
-            /* font-family: Arial, Helvetica, sans-serif */
             padding: 0.2rem 2rem 0.3rem;
             margin-top: 10px;
             width: 100%;
