@@ -7,9 +7,17 @@ const StyledA = styled.a``;
 const StyledButton = styled.button`
   border: 1px solid black;
   background: transparent;
-  cursor: pointer;
   overflow: hidden;
   height: 30px;
+  border: 2px solid ${colors.clrOrange};
+  transform: scale(1);
+  box-shadow: ${colors.boxShadowBtns};
+  transition: 0.2s;
+
+  :active {
+    transform: scale(0.9);
+  }
+
   .animation-container {
     display: flex;
     flex-direction: column-reverse;
@@ -37,6 +45,10 @@ const StyledButton = styled.button`
   }
 `;
 
+// border: 2px solid ${colors.clrOrange};
+//         transition: 0.2s;
+//         transform: scale(1);
+//         box-shadow: ${colors.boxShadowBtns};
 const Button = (props) => {
   // if (props.link) {
   //   return (

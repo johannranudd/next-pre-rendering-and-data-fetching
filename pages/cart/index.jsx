@@ -1,11 +1,12 @@
 import React from 'react';
 import { useAppContext } from '../../context/context';
 import Button from '../../components/ui/Button';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { StyledDiv } from '../../styles/cart-styles/cart.styles';
-import { BsChevronUp, BsChevronDown } from 'react-icons/bs';
+import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
+import { BiChevronsRight } from 'react-icons/bi';
 
 const Cart = () => {
   const {
@@ -18,6 +19,7 @@ const Cart = () => {
   const { cart, total, amount } = state;
 
   const [ccInputValue, setccInputValue] = useState();
+  const [inputAlert, setInputAlert] = useState(false);
   const router = useRouter();
 
   const itemsInCart = cart.filter((item) => {
@@ -26,9 +28,21 @@ const Cart = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    clearCart();
-    router.push('../success/');
+
+    if (Number(ccInputValue) && ccInputValue.length === 4) {
+      clearCart();
+      router.push('../success/');
+    } else {
+      setInputAlert(true);
+    }
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setInputAlert(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [inputAlert]);
 
   return (
     <StyledDiv>
@@ -44,13 +58,13 @@ const Cart = () => {
                 <div className='product-btns-and-info-container'>
                   <div className='incr-decr-remove'>
                     <button onClick={() => handleIncrement(id)}>
-                      <BsChevronUp />
+                      <FaChevronUp />
                     </button>
                     <button onClick={() => handleDecrement(id)}>
-                      <BsChevronDown />
+                      <FaChevronDown />
                     </button>
                     <button onClick={() => removeItemFromCart(id)}>
-                      remove
+                      <span>Remove</span>
                     </button>
                   </div>
 
@@ -89,13 +103,25 @@ const Cart = () => {
 
         <form onSubmit={handleSubmit}>
           <label>Input Fake Creditcard:</label>
-          <input
-            name={ccInputValue}
-            type='text'
-            value={ccInputValue ?? ''}
-            onChange={(e) => setccInputValue(e.target.value)}
-          />
-          <Button type='submit'>submit</Button>
+          <p className='inputAlert'>
+            {inputAlert && 'Fake creadit card number mus be four digits'}
+          </p>
+          <div className='input-and-button'>
+            <input
+              name={ccInputValue}
+              type='text'
+              value={ccInputValue ?? ''}
+              onChange={(e) => setccInputValue(e.target.value)}
+            />
+            <Button type='submit' className='add-to-cart-btn'>
+              <div className='animation-container'>
+                <p>Pay Now</p>
+                <div className='icon'>
+                  <BiChevronsRight />
+                </div>
+              </div>
+            </Button>
+          </div>
         </form>
       </section>
     </StyledDiv>

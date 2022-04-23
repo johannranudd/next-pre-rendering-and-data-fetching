@@ -53,8 +53,6 @@ export function AppWrapper({ children }) {
 
   const clearCart = () => {
     dispatch({ type: 'CLEAR_CART' });
-    // dispatch({ type: 'GET_TOTALS' });
-    console.log('func');
   };
 
   return (

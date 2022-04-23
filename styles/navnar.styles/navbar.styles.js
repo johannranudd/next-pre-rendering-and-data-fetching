@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../app.styles';
 
 export const StyledNav = styled.nav`
   .section-center {
@@ -10,23 +11,26 @@ export const StyledNav = styled.nav`
       h2 {
         cursor: pointer;
       }
-      /* button {
+      button {
         font-size: 1.5rem;
 
-        span {
+        p {
           position: relative;
-          top: -13px;
-          left: 10px;
-          min-height: 18px;
-          min-width: 18px;
-          padding: 3px;
+          top: 16px;
+          left: -12px;
+          display: flex;
+          justify-content: center;
+          align-self: center;
+          min-height: 22px;
+          min-width: 22px;
+          padding: 3px 6px;
           border-radius: 50%;
-          background: red;
+          background: ${colors.clrOrange};
           font-size: 0.8rem;
           font-weight: 600;
           color: white;
         }
-      } */
+      }
     }
   }
 `;

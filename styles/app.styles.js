@@ -5,7 +5,7 @@ export const colors = {
   white2: '#fff5ff',
   black: '#000',
   lightBlue: '#deeff9',
-  blue: '#737bff',
+  blue: 'rgb(57, 128, 187)',
   green: 'green',
   pinkBgColor: '#fa709a',
   yellowBgColor: '#fee140',
@@ -90,7 +90,11 @@ a {
   cursor: pointer;
 }
 
-
+button {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
 
 
 
@@ -110,11 +114,7 @@ h3 {
   font-family: ${fonts.nunito};
 }
 
-/* button {
-    background: transparent;
-  border: none;
-  cursor: pointer;
-} */
+
 
 .section-center {
   width: 95%;

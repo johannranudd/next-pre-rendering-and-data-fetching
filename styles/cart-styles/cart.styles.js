@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { device } from '../app.styles';
+import { colors } from '../app.styles';
 
 export const StyledDiv = styled.div`
   section {
@@ -12,6 +13,7 @@ export const StyledDiv = styled.div`
       place-items: center;
       max-width: 700px;
       margin: auto;
+      margin-bottom: 3rem;
       li {
         display: grid;
         grid-gap: 1rem;
@@ -22,22 +24,30 @@ export const StyledDiv = styled.div`
           display: flex;
           justify-content: space-between;
           height: 8rem;
-          /* display: grid; */
-          /* grid-template-columns: repeat(2, 1fr); */
           .incr-decr-remove {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            //!dfrgdr
-            /* display: grid;
-            grid-template-rows: repeat(3, 1fr);
-            button:nth-child(1) {
-              align-self: start;
+            button {
+              color: ${colors.blue};
+              font-size: 1rem;
+              transform: scale(1);
+              transition: 0.2s;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              span {
+                transition: 0.2s;
+                :active {
+                  transform: scale(0.9);
+                }
+              }
+              svg {
+                :active {
+                  transform: scale(0.9);
+                }
+              }
             }
-            button:nth-child(3) {
-              align-self: end;
-            } */
-            //!dfrgdr
           }
           .product-price-and-amount {
             display: flex;
@@ -54,9 +64,56 @@ export const StyledDiv = styled.div`
         }
       }
     }
+
+    /* totals */
+
+    .totals {
+      max-width: 300px;
+      margin: auto;
+      margin-bottom: 3rem;
+      p {
+        line-height: 2rem;
+      }
+    }
+
+    /* form */
+    form {
+      max-width: 300px;
+      margin: auto;
+      margin-bottom: 3rem;
+      .inputAlert {
+        background: ${colors.alertDanger};
+        color: ${colors.white};
+        padding: 0 0.5rem;
+        /* max-width: 70%; */
+        /* text-align: center; */
+      }
+      .input-and-button {
+        display: flex;
+        flex-direction: column;
+        input {
+          margin: 0.5rem 0;
+          padding: 0.2rem;
+        }
+      }
+    }
   }
 
   /* MEDIA */
+
+  @media ${device.mobileL} {
+    section {
+      form {
+        .input-and-button {
+          flex-direction: row;
+          align-items: center;
+          input {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
 
   @media ${device.tablet} {
     section {
@@ -72,7 +129,6 @@ export const StyledDiv = styled.div`
             max-width: 180px;
           }
           .product-btns-and-info-container {
-            /* width: 70%; */
             .incr-decr-remove {
               button {
               }
@@ -84,6 +140,20 @@ export const StyledDiv = styled.div`
               }
             }
           }
+        }
+      }
+
+      /* totals */
+      .totals {
+        max-width: 560px;
+      }
+
+      /* form */
+      form {
+        max-width: 560px;
+        .inputAlert {
+          max-width: 70%;
+          text-align: center;
         }
       }
     }

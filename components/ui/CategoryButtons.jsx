@@ -39,7 +39,7 @@ const StyledUl = styled.ul`
   max-width: 300px;
   margin: auto;
   margin-bottom: 2rem;
-  /* button {
+  button {
     transition: 0.3s;
     background: transparent;
     box-shadow: ${colors.boxShadowBtns};
@@ -53,7 +53,7 @@ const StyledUl = styled.ul`
       color: ${colors.white};
       border: 2px solid ${colors.clrOrange};
     }
-  } */
+  }
   /* @media (min-width: 768px) {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   } */
