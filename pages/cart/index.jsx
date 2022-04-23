@@ -4,6 +4,8 @@ import Button from '../../components/ui/Button';
 import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { StyledDiv } from '../../styles/cart-styles/cart.styles';
+import { BsChevronUp, BsChevronDown } from 'react-icons/bs';
 
 const Cart = () => {
   const {
@@ -23,15 +25,15 @@ const Cart = () => {
   });
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     clearCart();
-    // console.log('hanldesubmit');
     router.push('../success/');
   };
 
   return (
-    <div>
+    <StyledDiv>
       <section className='section-center'>
+        <h1>Cart</h1>
         <ul>
           {itemsInCart.map((item) => {
             const { id, name, price, images, amountInCart } = item;
@@ -39,14 +41,33 @@ const Cart = () => {
             return (
               <li key={id}>
                 <img src={images[0].src} alt={images[0].alt} />
-                <p>{name}</p>
-                <p>{price} kr</p>
-                <p>{amountInCart} items of this kind</p>
-                <p>{totalPerItems} for all items of this kind</p>
-                <div className='incr-decr-remove'>
-                  <Button onClick={() => handleIncrement(id)}>incr</Button>
-                  <Button onClick={() => handleDecrement(id)}>decr</Button>
-                  <Button onClick={() => removeItemFromCart(id)}>remove</Button>
+                <div className='product-btns-and-info-container'>
+                  <div className='incr-decr-remove'>
+                    <button onClick={() => handleIncrement(id)}>
+                      <BsChevronUp />
+                    </button>
+                    <button onClick={() => handleDecrement(id)}>
+                      <BsChevronDown />
+                    </button>
+                    <button onClick={() => removeItemFromCart(id)}>
+                      remove
+                    </button>
+                  </div>
+
+                  <div className='product-price-and-amount'>
+                    <p>
+                      <strong>{name}</strong>
+                    </p>
+                    <p>
+                      Items: <span>{amountInCart}</span>
+                    </p>
+                    <p>
+                      Price: <span>{price},-</span>
+                    </p>
+                    <p>
+                      Total: <strong>{totalPerItems},-</strong>
+                    </p>
+                  </div>
                 </div>
               </li>
             );
@@ -77,7 +98,7 @@ const Cart = () => {
           <Button type='submit'>submit</Button>
         </form>
       </section>
-    </div>
+    </StyledDiv>
   );
 };
 

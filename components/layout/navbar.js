@@ -17,10 +17,10 @@ const Navbar = () => {
         </div>
         <div>
           <Link href={`/cart`}>
-            <Button>
+            <button>
               <span>{state.amount}</span>
               <AiOutlineShoppingCart />
-            </Button>
+            </button>
           </Link>
         </div>
       </section>

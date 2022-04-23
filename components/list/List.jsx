@@ -66,7 +66,7 @@ const StyledUl = styled.ul`
       justify-content: space-between;
       padding: 1rem 0;
     }
-    button {
+    /* button {
       display: flex;
       a {
         position: relative;
@@ -109,7 +109,7 @@ const StyledUl = styled.ul`
           }
         }
       }
-    }
+    } */
   }
 
   //   @media (min-width: 768px) {

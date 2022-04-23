@@ -29,9 +29,11 @@ const ListItem = ({ id, name, images, price }) => {
         data-id={id}
         onClick={() => handleIncrement(id)}
       >
-        <div>
+        <div className='animation-container'>
           <p>Add to cart</p>
-          <AiOutlineShoppingCart />
+          <div className='icon'>
+            <AiOutlineShoppingCart />
+          </div>
         </div>
       </Button>
     </li>

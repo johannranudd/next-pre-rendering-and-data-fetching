@@ -28,7 +28,7 @@ export function AppWrapper({ children }) {
 
   useEffect(() => {
     dispatch({ type: 'GET_TOTALS' });
-  }, [state.total]);
+  }, [state.total, state.amount]);
 
   const handleIncrement = (id) => {
     dispatch({ type: 'INCREMENT', payload: id });
@@ -53,6 +53,7 @@ export function AppWrapper({ children }) {
 
   const clearCart = () => {
     dispatch({ type: 'CLEAR_CART' });
+    // dispatch({ type: 'GET_TOTALS' });
     console.log('func');
   };
 

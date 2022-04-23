@@ -10,8 +10,7 @@ export const StyledNav = styled.nav`
       h2 {
         cursor: pointer;
       }
-      button {
-        /* display: flex; */
+      /* button {
         font-size: 1.5rem;
 
         span {
@@ -27,7 +26,7 @@ export const StyledNav = styled.nav`
           font-weight: 600;
           color: white;
         }
-      }
+      } */
     }
   }
 `;

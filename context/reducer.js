@@ -108,6 +108,8 @@ export const reducer = (state, action) => {
       return {
         ...state,
         cart: [],
+        total: 0,
+        amount: 0,
       };
 
     default:

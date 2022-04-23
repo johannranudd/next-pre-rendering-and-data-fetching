@@ -26,17 +26,17 @@ const ProductDetailPage = (props) => {
       <section className='section-center'>
         <img src={image.src} alt={image.alt} />
         <h3>Product info</h3>
-        <div class='name-and-price'>
+        <div className='name-and-price'>
           <h4>
-            <strong>${name}</strong>
+            <strong>{name}</strong>
           </h4>
-          <h4 class='price'>
+          <h4 className='price'>
             <strong>kr ${price}</strong>
           </h4>
         </div>
 
-        <div class='object-info'>
-          <div class='dimensions'>
+        <div className='object-info'>
+          <div className='dimensions'>
             <p>
               Length: <strong>{dimensions.length}cm</strong>
             </p>
@@ -47,7 +47,7 @@ const ProductDetailPage = (props) => {
               Height: <strong>{dimensions.height}cm</strong>
             </p>
           </div>
-          <div class='other'>
+          <div className='other'>
             <p>
               Weight: <strong>{weight} kg</strong>
             </p>
@@ -59,10 +59,16 @@ const ProductDetailPage = (props) => {
             </p>
           </div>
         </div>
-        <Button className='add-to-cart-btn' onClick={() => handleIncrement(id)}>
-          <div>
-            <p>Add to Cart</p>
-            <AiOutlineShoppingCart />
+        <Button
+          className='add-to-cart-btn'
+          data-id={id}
+          onClick={() => handleIncrement(id)}
+        >
+          <div className='animation-container'>
+            <p>Add to cart</p>
+            <div className='icon'>
+              <AiOutlineShoppingCart />
+            </div>
           </div>
         </Button>
       </section>
