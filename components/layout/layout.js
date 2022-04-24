@@ -12,7 +12,6 @@ const Layout = (props) => {
   return (
     <>
       <Head>
-        {/* <title>Coffe mug store{router.asPath}</title> */}
         <title>{`The coffe mug store${router.asPath}`}</title>
         <meta name='description' content='Coffee mug store' />
         <meta name='author' content='Johann Ranudd' />
