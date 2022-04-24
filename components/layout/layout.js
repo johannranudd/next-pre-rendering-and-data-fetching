@@ -11,13 +11,13 @@ const Layout = (props) => {
 
   return (
     <>
-      {/* <Head>
+      <Head>
         <title>Coffe mug store{router.asPath}</title>
         <meta name='description' content='Coffee mug store' />
         <meta name='author' content='Johann Ranudd' />
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
         <link rel='icon' href='/favicon.ico' />
-      </Head> */}
+      </Head>
       <Navbar />
       <GlobalStyle />
       <main>{props.children}</main>
