@@ -88,7 +88,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       loadedData: product,
-      revalidate: 1800,
+      revalidate: 60,
       notFound: false,
     },
   };

@@ -44,7 +44,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       loadedData: sortById,
-      revalidate: 1800,
+      revalidate: 60,
       notFound: false,
     },
   };
