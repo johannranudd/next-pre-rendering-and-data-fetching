@@ -13,7 +13,7 @@ const ListItem = ({ id, name, images, price }) => {
         <a className='image-link'>
           <img src={image.src} alt={image.alt} />
           <div className='backdrop'>
-            <p>View image</p>
+            <p>View Product</p>
           </div>
         </a>
       </Link>
