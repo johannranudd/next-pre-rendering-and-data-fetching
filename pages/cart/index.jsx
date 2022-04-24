@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAppContext } from '../../context/context';
 import Button from '../../components/ui/Button';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { StyledDiv } from '../../styles/cart-styles/cart.styles';
@@ -18,6 +18,7 @@ const Cart = () => {
   } = useAppContext();
   const { cart, total, amount } = state;
 
+  const inputRef = useRef();
   const [ccInputValue, setccInputValue] = useState();
   const [inputAlert, setInputAlert] = useState(false);
   const router = useRouter();
@@ -35,6 +36,8 @@ const Cart = () => {
     } else {
       setInputAlert(true);
     }
+    setccInputValue('');
+    inputRef.current.focus();
   };
 
   useEffect(() => {
@@ -92,25 +95,27 @@ const Cart = () => {
 
         <div className='totals'>
           <p>
-            items in cart <strong>{amount}</strong>
+            items in cart: <strong>{amount}</strong>
           </p>
           <p>
-            Total price <strong>{total}</strong>
+            Total price: <strong>{total} kr</strong>
           </p>
         </div>
 
         {/* form */}
 
         <form onSubmit={handleSubmit}>
-          <label>Input Fake Creditcard:</label>
+          <label>Fake card number (4 digits)</label>
           <p className='inputAlert'>
             {inputAlert && 'Fake creadit card number mus be four digits'}
           </p>
           <div className='input-and-button'>
             <input
+              ref={inputRef}
               name={ccInputValue}
               type='text'
               value={ccInputValue ?? ''}
+              placeholder='1234'
               onChange={(e) => setccInputValue(e.target.value)}
             />
             <Button type='submit' className='add-to-cart-btn'>

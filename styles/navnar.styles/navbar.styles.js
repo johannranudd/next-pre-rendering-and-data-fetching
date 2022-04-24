@@ -8,8 +8,9 @@ export const StyledNav = styled.nav`
     align-items: center;
     padding: 2rem 0;
     div {
-      h2 {
+      .logo {
         cursor: pointer;
+        font-size: 2rem;
       }
       button {
         font-size: 1.5rem;

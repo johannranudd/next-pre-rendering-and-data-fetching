@@ -14,6 +14,15 @@ export const reducer = (state, action) => {
         item.amountInCart = 0;
         return item;
       });
+
+      action.payload.sort((a, b) => {
+        if (Number(a.id) > Number(b.id)) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+
       localStorage.setItem('cart', JSON.stringify(action.payload));
 
       if (state.total > 0) {

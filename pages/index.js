@@ -25,6 +25,14 @@ export default function Home(props) {
 export async function getStaticProps(context) {
   const data = await getData(url2);
 
+  const sortById = data.sort((a, b) => {
+    if (Number(a.id) > Number(b.id)) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
+
   if (!data) {
     return {
       redirect: {
@@ -35,7 +43,7 @@ export async function getStaticProps(context) {
 
   return {
     props: {
-      loadedData: data,
+      loadedData: sortById,
       revalidate: 10,
       notFound: false,
     },

@@ -7,6 +7,7 @@ export const colors = {
   lightBlue: '#deeff9',
   blue: 'rgb(57, 128, 187)',
   green: 'green',
+  lightGrey: 'rgba(0, 0, 0, 0.153);',
   pinkBgColor: '#fa709a',
   yellowBgColor: '#fee140',
   boxShadow1: 'rgba(0, 0, 0, 0.24)',
@@ -20,6 +21,7 @@ export const colors = {
   clrLightBlueGradiant: 'linear-gradient(135deg, #fef2e5 0%, #e2d1c3 100%)',
   clrOrange: '#c26610;',
   boxShadowBtns: 'rgba(50, 50, 93, 0.25) 0px 6px 12px -2px',
+  boxShadowImg: 'rgba(0, 0, 0, 0.35) 0px 5px 15px;',
 };
 
 export const fonts = {
@@ -79,10 +81,17 @@ export const GlobalStyle = createGlobalStyle`
 html,
 body {
   min-height: 100vh;
+  position: relative;
   /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
     background:  ${colors.clrLightBlueGradiant};
 }
+
+/* main {
+  min-height: 100vh;
+} */
+
+
 
 a {
   /* color: inherit; */
@@ -122,11 +131,7 @@ h3 {
   margin: auto;
 }
 
-.center-me {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 
 
 

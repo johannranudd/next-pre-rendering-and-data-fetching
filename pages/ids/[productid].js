@@ -24,6 +24,7 @@ const ProductDetailPage = (props) => {
   return (
     <StyledDiv>
       <section className='section-center'>
+        <h2>Details</h2>
         <img src={image.src} alt={image.alt} />
         <h3>Product info</h3>
         <div className='name-and-price'>

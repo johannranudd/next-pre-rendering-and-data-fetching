@@ -4,6 +4,7 @@ import { StyledNav } from '../../styles/navnar.styles/navbar.styles';
 import { useAppContext } from '../../context/context';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import Button from '../ui/Button';
+import { GiCoffeeBeans } from 'react-icons/gi';
 
 const Navbar = () => {
   const { state } = useAppContext();
@@ -12,10 +13,12 @@ const Navbar = () => {
       <section className='section-center'>
         <div>
           <Link href={`/`}>
-            <h2>Logo</h2>
+            <h2 className='logo'>
+              <GiCoffeeBeans />
+            </h2>
           </Link>
         </div>
-        <div>
+        <div className='cart'>
           <Link href={`/cart`}>
             <button>
               <p>

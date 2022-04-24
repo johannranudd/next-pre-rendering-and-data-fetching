@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { device } from '../app.styles';
-import { colors } from '../app.styles';
+import { device, colors } from '../app.styles';
 
 export const StyledDiv = styled.div`
   section {
@@ -9,7 +8,7 @@ export const StyledDiv = styled.div`
     }
     ul {
       display: grid;
-      grid-gap: 2rem;
+      grid-gap: 4rem;
       place-items: center;
       max-width: 700px;
       margin: auto;
@@ -19,6 +18,7 @@ export const StyledDiv = styled.div`
         grid-gap: 1rem;
         img {
           max-width: 300px;
+          box-shadow: ${colors.boxShadowImg};
         }
         .product-btns-and-info-container {
           display: flex;
@@ -36,6 +36,9 @@ export const StyledDiv = styled.div`
               display: flex;
               justify-content: center;
               align-items: center;
+              :hover {
+                opacity: 0.7;
+              }
               span {
                 transition: 0.2s;
                 :active {

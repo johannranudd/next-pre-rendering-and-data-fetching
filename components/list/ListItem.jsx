@@ -18,8 +18,8 @@ const ListItem = ({ id, name, images, price }) => {
         </a>
       </Link>
       <div className='product-short-info'>
-        <p>{name}</p>
-        <p>
+        <p className='name'>{name}</p>
+        <p className='price'>
           <strong>{price}</strong> Nok
         </p>
       </div>

@@ -17,6 +17,8 @@ const List = ({ loadedData }) => {
     }
   }, [displayByCategory]);
 
+  // console.log('a2:', arrayToLoop);
+
   if (arrayToLoop) {
     return (
       <StyledUl className='product-list'>
@@ -28,6 +30,8 @@ const List = ({ loadedData }) => {
   }
 };
 
+// **styles**
+
 const StyledUl = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -35,13 +39,13 @@ const StyledUl = styled.ul`
   margin-bottom: 3rem;
   /* font-family: ${fonts.nunito}; */
   li {
-    margin: auto;
+    margin: 0 auto;
     .image-link {
       position: relative;
       display: grid;
       img {
         max-width: 300px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        box-shadow: ${colors.boxShadowImg};
       }
       .backdrop {
         position: absolute;
@@ -64,52 +68,16 @@ const StyledUl = styled.ul`
     .product-short-info {
       display: flex;
       justify-content: space-between;
-      padding: 1rem 0;
-    }
-    /* button {
-      display: flex;
-      a {
-        position: relative;
-        display: inline-block;
-        overflow: hidden;
-        height: 30px;
-        width: 100%;
-        border: 2px solid ${colors.clrOrange};
-        transition: 0.2s;
-        transform: scale(1);
-        box-shadow: ${colors.boxShadowBtns};
-
-        :active {
-          transform: scale(0.9);
-        }
-        div {
-          transition: 0.3s;
-          display: flex;
-          flex-direction: column-reverse;
-          align-items: center;
-          background: transparent;
-          width: 100%;
-          transform: translateY(-40px);
-          :hover {
-            transform: translateY(0px);
-          }
-          p {
-            padding: 0.2rem 2rem 0.3rem;
-            margin-top: 10px;
-            width: 100%;
-            height: 30px;
-          }
-          svg {
-            padding: 0.2rem 2rem 0.3rem;
-            font-size: 1.2rem;
-            background: ${colors.clrOrange};
-            width: 100%;
-            height: 30px;
-            color: white;
-          }
-        }
+      padding: 0.5rem 0;
+      min-height: 70px;
+      width: 100%;
+      .name {
+        width: 70%;
       }
-    } */
+      .price {
+        /* width: 70%; */
+      }
+    }
   }
 
   //   @media (min-width: 768px) {

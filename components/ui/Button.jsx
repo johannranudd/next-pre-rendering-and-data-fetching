@@ -22,7 +22,7 @@ const StyledButton = styled.button`
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    transform: translateY(-50%);
+    transform: translateY(-52%);
 
     transition: 0.3s;
     :hover {
