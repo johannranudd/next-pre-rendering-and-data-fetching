@@ -4,6 +4,7 @@ import { colors, device } from '../app.styles';
 export const StyledDiv = styled.div`
   .section-center {
     max-width: 400px;
+    padding-bottom: 7rem;
     h2 {
       margin-bottom: 2rem;
     }
@@ -16,6 +17,9 @@ export const StyledDiv = styled.div`
       margin-bottom: 1rem;
     }
 
+    p {
+      font-size: 0.9rem;
+    }
     .name-and-price {
       display: flex;
       justify-content: space-between;
@@ -57,6 +61,9 @@ export const StyledDiv = styled.div`
   @media ${device.mobileM} {
     .section-center {
       width: 90%;
+      p {
+        font-size: 1rem;
+      }
     }
   }
 `;

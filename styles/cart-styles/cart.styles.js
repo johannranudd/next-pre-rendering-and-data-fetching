@@ -6,6 +6,9 @@ export const StyledDiv = styled.div`
     h1 {
       padding: 3rem 0;
     }
+    p {
+      font-size: 0.9rem;
+    }
     ul {
       display: grid;
       grid-gap: 4rem;
@@ -57,6 +60,12 @@ export const StyledDiv = styled.div`
             flex-direction: column;
             justify-content: space-between;
             width: 50%;
+            height: 100%;
+            h4 {
+              border-bottom: 1px solid ${colors.lightGrey};
+              margin-bottom: 0.3rem;
+              font-size: 0.9rem;
+            }
             p {
               display: flex;
               justify-content: space-between;
@@ -83,13 +92,11 @@ export const StyledDiv = styled.div`
     form {
       max-width: 300px;
       margin: auto;
-      margin-bottom: 3rem;
+      padding-bottom: 10rem;
       .inputAlert {
         background: ${colors.alertDanger};
         color: ${colors.white};
         padding: 0 0.5rem;
-        /* max-width: 70%; */
-        /* text-align: center; */
       }
       .input-and-button {
         display: flex;
@@ -106,6 +113,21 @@ export const StyledDiv = styled.div`
 
   @media ${device.mobileL} {
     section {
+      ul {
+        li {
+          .product-btns-and-info-container {
+            .product-price-and-amount {
+              h4 {
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+      }
+
+      p {
+        font-size: 1rem;
+      }
       form {
         .input-and-button {
           flex-direction: row;
@@ -122,7 +144,6 @@ export const StyledDiv = styled.div`
     section {
       ul {
         li {
-          /* place-items: center; */
           align-items: end;
           grid-template-columns: 46% 54%;
           width: 100%;
