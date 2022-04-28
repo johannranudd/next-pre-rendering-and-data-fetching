@@ -105,7 +105,7 @@ const Cart = () => {
         <form onSubmit={handleSubmit}>
           <label>Fake card number (4 digits)</label>
           <p className='inputAlert'>
-            {inputAlert && 'Fake creadit card number mus be four digits'}
+            {inputAlert && 'Fake creadit card number must be four digits'}
           </p>
           <div className='input-and-button'>
             <input
