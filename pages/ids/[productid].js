@@ -32,7 +32,7 @@ const ProductDetailPage = (props) => {
             <strong>{name}</strong>
           </h4>
           <h4 className='price'>
-            <strong>kr ${price}</strong>
+            <strong>kr {price}</strong>
           </h4>
         </div>
 
